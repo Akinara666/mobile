@@ -13,6 +13,20 @@
       <ion-title size="large">{{ folder }}</ion-title>
     </ion-toolbar>
   </ion-header>
+  
+
+<div>
+    <ion-list>
+      <ion-list-header>Список любимых игр</ion-list-header>
+      
+      <ion-input [(ngModel)]="var1"></ion-input>
+      <ion-input [(ngModel)]="var2"></ion-input>
+    
+    </ion-list>
+    
+
+    <ion-button (click)="btn_click()" shape="round">Добавить игру<ion-icon slot="start" name="heart"></ion-icon></ion-button>
+  </div>
 
   <div id="container">
     <strong class="capitalize">{{ folder }}</strong>
