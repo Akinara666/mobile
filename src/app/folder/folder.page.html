@@ -9,25 +9,22 @@
 
   
 <ion-content>
-    <ion-list [(ngModel)]="appPages" id="labels-list">
-      <ion-item *ngFor="let page of appPages" lines="none">
-        <ion-icon aria-hidden="true" slot="start"></ion-icon>
-        <ion-label>{{page['title']}} <ion-icon name="{{page['icon']}}"></ion-icon></ion-label>
-      </ion-item>
-    </ion-list>
-
-
-    <ion-list [(ngModel)]="games" id="labels-list">
-      <ion-list-header>Игры</ion-list-header>
-      <ion-item *ngFor="let game of games" lines="none">
-        <ion-icon aria-hidden="true" slot="start"></ion-icon>
-        <ion-label>{{game}}</ion-label>
-      </ion-item>
-    </ion-list>
-    
   <ion-item>
-    <ion-input [(ngModel)]="gameName" label="Введите название игры:" placeholder="Название"></ion-input>
+    <ion-input [(ngModel)]="game_name" label="Введите название игры:" placeholder="Название"></ion-input>
   </ion-item>
+  <ion-item>
+    <ion-input [(ngModel)]="game_rating" label="Введите оценку игры:" placeholder="Название"></ion-input>
+  </ion-item>
+  <ion-button (click)="btn_click()" shape="round">Добавить игру<ion-icon slot="start" name="heart"></ion-icon></ion-button>
+
+  <ion-grid>
+    <ion-item *ngFor="let game of games_list" lines="none">
+    <ion-row>
+      <ion-col>{{game.g_name}}</ion-col>
+      <ion-col>{{game.g_rating}}</ion-col>
+    </ion-row>
+    </ion-item>
+  </ion-grid>
+  
     
-    <ion-button (click)="btn_click()" shape="round">Добавить игру<ion-icon slot="start" name="heart"></ion-icon></ion-button>
 </ion-content>
